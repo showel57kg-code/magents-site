@@ -87,7 +87,7 @@
     const roles = { shop: 'shop', builder: 'builder', buyer: 'buyer agent' };
     const role = roles[f.get('role')] || 'shop';
     const body = `Role: ${role}\nEmail: ${mail}\nWebsite: ${f.get('website') || '-'}\n\n${f.get('note') || ''}`;
-    location.href = `mailto:contact@ordosphere.com?subject=${encodeURIComponent('MAGENTS – ' + role)}&body=${encodeURIComponent(body)}`;
-    $('#form-note').innerHTML = 'Your mail app should open now with the message ready. If nothing happens, write to <a href="mailto:contact@ordosphere.com">contact@ordosphere.com</a>.';
+    location.href = `mailto:contact@magents.store?subject=${encodeURIComponent('MAGENTS – ' + role)}&body=${encodeURIComponent(body)}`;
+    $('#form-note').innerHTML = 'Your mail app should open now with the message ready. If nothing happens, write to <a href="mailto:contact@magents.store">contact@magents.store</a>.';
   });
 })();

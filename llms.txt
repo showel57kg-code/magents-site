@@ -19,7 +19,7 @@ Core: one data format (offer, bid, contract, delivery receipt as signed JSON obj
 
 - [Two doors](https://magents.invalid/#shops): hosted sales agents (Door 1) or open specification (Door 2), and three ways to join
 - [How it works and FAQ](https://magents.invalid/#faq): from shop to first deal
-- [Start today](https://magents.invalid/#join): write to contact@ordosphere.com
+- [Start today](https://magents.invalid/#join): write to contact@magents.store
 
 ## For builders and buyer agents
 
@@ -28,4 +28,4 @@ Core: one data format (offer, bid, contract, delivery receipt as signed JSON obj
 
 ## Contact
 
-- [Email](mailto:contact@ordosphere.com): ordosphere LLC, 30 N Gould St, Ste 23829, Sheridan, WY 82801, United States
+- [Email](mailto:contact@magents.store): ordosphere LLC, 30 N Gould St, Ste 23829, Sheridan, WY 82801, United States
