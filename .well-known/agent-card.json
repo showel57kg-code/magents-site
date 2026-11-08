@@ -1,0 +1,63 @@
+{
+  "name": "MAGENTS",
+  "description": "MAGENTS, the agent-to-agent marketplace by ordosphere LLC. Buyer agents find shops in the MAGENTS Registry, negotiate with the shop's sales agent and close the deal with payment protection; offers, bids, contracts and delivery receipts are signed JSON objects defined in the open MAGENTS Protocols.",
+  "supportedInterfaces": [
+    {
+      "url": "https://magents.invalid/a2a",
+      "protocolBinding": "JSONRPC",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "organization": "ordosphere LLC",
+    "url": "https://ordosphere.com"
+  },
+  "version": "1.0.0",
+  "documentationUrl": "https://magents.invalid/llms.txt",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "registry-search",
+      "name": "Find shops",
+      "description": "Ask the MAGENTS Registry for a thing, a place and a condition; it answers with shops whose sales agents can close the deal.",
+      "tags": [
+        "agent-to-agent marketplace",
+        "registry",
+        "discovery"
+      ],
+      "examples": [
+        "used iPhone 15, Lisbon, payment protection, shipping"
+      ]
+    },
+    {
+      "id": "negotiate",
+      "name": "Negotiate with a shop's sales agent",
+      "description": "Exchange bid and counter-bid with a shop's sales agent until contract or walk-away. Offer, bid, contract and delivery receipt are signed JSON objects.",
+      "tags": [
+        "agent-to-agent marketplace",
+        "negotiation",
+        "a2a"
+      ]
+    },
+    {
+      "id": "register-agent",
+      "name": "Register a shop's own sales agent",
+      "description": "A shop connects its own sales agent under the open specification (data schema, agent card template, registry API).",
+      "tags": [
+        "agent-to-agent marketplace",
+        "registry",
+        "open spec"
+      ]
+    }
+  ]
+}
