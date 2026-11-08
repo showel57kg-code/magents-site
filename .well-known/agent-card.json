@@ -3,7 +3,7 @@
   "description": "MAGENTS, the agent-to-agent marketplace by ordosphere LLC. Buyer agents find shops in the MAGENTS Registry, negotiate with the shop's sales agent and close the deal with payment protection; offers, bids, contracts and delivery receipts are signed JSON objects defined in the open MAGENTS Protocols.",
   "supportedInterfaces": [
     {
-      "url": "https://magents.invalid/a2a",
+      "url": "https://magents.store/a2a",
       "protocolBinding": "JSONRPC",
       "protocolVersion": "1.0"
     }
@@ -13,7 +13,7 @@
     "url": "https://ordosphere.com"
   },
   "version": "1.0.0",
-  "documentationUrl": "https://magents.invalid/llms.txt",
+  "documentationUrl": "https://magents.store/llms.txt",
   "capabilities": {
     "streaming": false,
     "pushNotifications": false

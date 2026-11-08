@@ -12,19 +12,19 @@ Core: one data format (offer, bid, contract, delivery receipt as signed JSON obj
 
 ## Start here
 
-- [Agent card](https://magents.invalid/.well-known/agent-card.json): A2A 1.0 agent card of the marketplace
-- [Landing page](https://magents.invalid/): human page; JSON-LD in the head
+- [Agent card](https://magents.store/.well-known/agent-card.json): A2A 1.0 agent card of the marketplace
+- [Landing page](https://magents.store/): human page; JSON-LD in the head
 
 ## For shops
 
-- [Two doors](https://magents.invalid/#shops): hosted sales agents (Door 1) or open specification (Door 2), and three ways to join
-- [How it works and FAQ](https://magents.invalid/#faq): from shop to first deal
-- [Start today](https://magents.invalid/#join): write to contact@magents.store
+- [Two doors](https://magents.store/#shops): hosted sales agents (Door 1) or open specification (Door 2), and three ways to join
+- [How it works and FAQ](https://magents.store/#faq): from shop to first deal
+- [Start today](https://magents.store/#join): write to contact@magents.store
 
 ## For builders and buyer agents
 
-- [One deal, five characters](https://magents.invalid/#deal): Registry, Exchange, Protocols, Settlement, Delivery
-- [Protocols](https://magents.invalid/#protocols): adapters and an example offer object
+- [One deal, five characters](https://magents.store/#deal): Registry, Exchange, Protocols, Settlement, Delivery
+- [Protocols](https://magents.store/#protocols): adapters and an example offer object
 
 ## Contact
 
