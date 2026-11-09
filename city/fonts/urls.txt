@@ -1,0 +1,12 @@
+css_Baloo_2_wght_500_700_800.txt 500; https://fonts.gstatic.com/s/baloo2/v23/wXKrE3kTposypRyd51jcAM4olXc.woff2
+css_Baloo_2_wght_500_700_800.txt 700; https://fonts.gstatic.com/s/baloo2/v23/wXKrE3kTposypRyd51jcAM4olXc.woff2
+css_Baloo_2_wght_500_700_800.txt 800; https://fonts.gstatic.com/s/baloo2/v23/wXKrE3kTposypRyd51jcAM4olXc.woff2
+css_Fredoka_wght_400_500_600_700.txt 400; https://fonts.gstatic.com/s/fredoka/v17/X7n64b87HvSqjb_WIi2yDCRwoQ_k7367_DWu89XgHPyh.woff2
+css_Fredoka_wght_400_500_600_700.txt 500; https://fonts.gstatic.com/s/fredoka/v17/X7n64b87HvSqjb_WIi2yDCRwoQ_k7367_DWu89XgHPyh.woff2
+css_Fredoka_wght_400_500_600_700.txt 600; https://fonts.gstatic.com/s/fredoka/v17/X7n64b87HvSqjb_WIi2yDCRwoQ_k7367_DWu89XgHPyh.woff2
+css_Fredoka_wght_400_500_600_700.txt 700; https://fonts.gstatic.com/s/fredoka/v17/X7n64b87HvSqjb_WIi2yDCRwoQ_k7367_DWu89XgHPyh.woff2
+css_Lilita_One.txt 400; https://fonts.gstatic.com/s/lilitaone/v17/i7dPIFZ9Zz-WBtRtedDbYEF8RXi4EwQ.woff2
+css_Nunito_wght_400_600_700_800.txt 400; https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2
+css_Nunito_wght_400_600_700_800.txt 600; https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2
+css_Nunito_wght_400_600_700_800.txt 700; https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2
+css_Nunito_wght_400_600_700_800.txt 800; https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2

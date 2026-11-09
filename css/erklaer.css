@@ -1,0 +1,56 @@
+/* MAGENTS v6 · Erklär-Strecke: scrollt wie ein Erklärvideo. Figur steht ganz in einer weichen Bühne. */
+.story { position: relative; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 48px) clamp(24px, 4vw, 56px); max-width: 1240px; margin: 0 auto; }
+.story .sec-head { margin-bottom: 8px; }
+.eyebrow { font-family: var(--mono); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+
+.story-track { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 72px); align-items: start; }
+.story-stage { position: sticky; top: 84px; order: 2; height: min(74svh, 640px); display: grid; place-items: center; }
+.steps { order: 1; list-style: none; margin: 0; padding: 0 0 12svh; }
+.step { min-height: 82svh; display: flex; flex-direction: column; justify-content: center; gap: 14px; max-width: 34rem; opacity: .35; transition: opacity .5s var(--ease-out), transform .6s var(--ease-out); transform: translateY(10px); }
+.step.is-on { opacity: 1; transform: none; }
+.step-spacer { height: 0; list-style: none; }
+.step h3 { font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 3.4vw, 2.7rem); line-height: 1.05; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.step h3 em { font-style: normal; font-family: var(--mono); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--fig, var(--accent)); }
+.step p { color: var(--text); font-size: 1.2rem; max-width: 34ch; }
+.step .step-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 10px; }
+
+/* Bühne (v6b): keine Karte, kein Rahmen. Freigestellte Figuren stehen direkt auf der Nachtwelt, ganz im Bild. */
+.actor { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; transform: scale(.97) translateY(10px); transition: opacity .6s var(--ease-out), transform .8s var(--ease-out); pointer-events: none; }
+.actor.is-on { opacity: 1; transform: none; }
+.actor-fig { position: relative; min-height: 0; min-width: 0; height: 100%; max-height: 100%; aspect-ratio: 352 / 456; max-width: 100%; display: grid; place-items: center; }
+.actor-fig video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: none; filter: drop-shadow(0 16px 16px rgba(0, 0, 0, .45)); }
+.actor-name { position: absolute; left: 0; right: 0; bottom: 0; text-align: center; font: 700 .8rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--fig, var(--accent)); text-shadow: 0 2px 6px rgba(0, 0, 0, .7); }
+.sway { animation: sway 6.5s ease-in-out infinite; transform-origin: 50% 90%; }
+@keyframes sway { 0%, 100% { transform: translateY(0) rotate(-1.1deg) scale(1); } 50% { transform: translateY(-7px) rotate(1.1deg) scale(1.012); } }
+
+/* Gruppenbild (Anfang und Ende): alle fünf stehen frei nebeneinander, jede ganz */
+.group { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; gap: 10px 2%; width: 100%; padding: 0; position: relative; }
+.group figure { margin: 0; width: 18%; position: relative; text-align: center; }
+.group img { display: block; width: 100%; height: auto; filter: drop-shadow(0 14px 12px rgba(0, 0, 0, .45)); }
+.group figcaption { margin-top: 4px; font: 700 .72rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--fig, var(--text)); }
+.group .sway { animation: sway 7s ease-in-out infinite; }
+.group figure:nth-child(2) .sway { animation-delay: -1.4s; } .group figure:nth-child(3) .sway { animation-delay: -2.8s; } .group figure:nth-child(4) .sway { animation-delay: -4.2s; } .group figure:nth-child(5) .sway { animation-delay: -5.6s; }
+.actor.group-actor .group { max-width: 600px; }
+
+.city-link { display: inline-flex; align-items: center; gap: 8px; }
+
+@media (max-width: 900px) {
+  .story-track { grid-template-columns: 1fr; gap: 0; }
+  .story-stage { order: 1; top: 72px; height: 50svh; z-index: 3; background: var(--night); padding: 6px 0 10px; margin: 0 calc(50% - 50vw); }
+  .story-stage::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 30px; background: linear-gradient(180deg, var(--night), rgba(13, 31, 43, 0)); pointer-events: none; }
+  .group figure { width: 28%; }
+  .group { gap: 6px 3%; }
+  .steps { order: 2; }
+  /* Text bleibt unter der Bühne kleben; die nächste Szene schiebt sich darüber */
+  .step { position: sticky; top: calc(72px + 50svh + 22px); background: var(--night); min-height: 50svh; justify-content: flex-start; max-width: none; margin: 0 calc(50% - 50vw); padding: 8px calc(50vw - 50%) 0; opacity: 1; transform: none; }
+  .step:nth-last-child(2) { min-height: 0; }
+  .step-spacer { height: 40svh; }
+  .step:not(.is-on) { opacity: 1; }
+  .group figcaption { font-size: .62rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .actor, .step { transition: none; }
+  .sway, .group .sway { animation: none !important; }
+}
+.no-js .story-stage { display: none; }
+.no-js .step { opacity: 1; transform: none; min-height: 0; padding: 18px 0; }

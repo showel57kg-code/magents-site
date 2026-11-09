@@ -1,0 +1,61 @@
+/* MAGENTS v6 · City-Besuch: Gäste auf dem Platz. Gleiche Technik wie die Nachtseite (weiche Bühne, ganze Figur). */
+.visit{background:linear-gradient(180deg,#0d1f2b 0%,#13293a 100%);color:#f1eadc;padding:clamp(40px,7vw,96px) clamp(16px,4vw,48px)}
+.visit-inner{max-width:1180px;margin:0 auto}
+.v-eyebrow{font:700 .8rem/1 "Nunito",system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#cbe03a;margin:0 0 12px}
+.visit h2{font-family:"Lilita One","Fredoka",system-ui,sans-serif;font-weight:400;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.05;margin:0;max-width:20ch}
+.v-sub{margin:14px 0 30px;color:#b8c6c6;font-size:1.15rem;max-width:56ch}
+.scenes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,4vw,48px);align-items:start}
+.scene{margin:0}
+.scene h3{font:800 1.25rem/1.2 "Nunito",system-ui,sans-serif;margin:16px 0 4px}
+.scene p{margin:0;color:#b8c6c6}
+.scene-card{position:relative;aspect-ratio:3/4;border-radius:28px;overflow:hidden;background:#13293a;box-shadow:0 0 0 2px color-mix(in srgb,var(--fig) 55%,transparent),0 24px 60px -18px #000,0 0 80px -24px var(--fig)}
+.scene-card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tiles{display:grid;gap:10px;padding:12px;border-radius:28px;background:#13293a;box-shadow:0 0 0 2px color-mix(in srgb,var(--fig) 55%,transparent),0 24px 60px -18px #000,0 0 80px -24px var(--fig)}
+.tiles.n4{grid-template-columns:repeat(2,1fr)}.tiles.n2{grid-template-columns:repeat(2,1fr)}
+.tiles figure{margin:0}.tile{aspect-ratio:3/4;border-radius:20px;overflow:hidden;background:#dde0e7;position:relative;box-shadow:inset 0 0 30px 4px rgba(190,196,212,.5)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 52%}
+.sway{animation:sway 6.5s ease-in-out infinite;transform-origin:50% 85%}
+.tiles figure:nth-child(2) .sway{animation-delay:-1.6s}.tiles figure:nth-child(3) .sway{animation-delay:-3.2s}.tiles figure:nth-child(4) .sway{animation-delay:-4.8s}
+@keyframes sway{0%,100%{transform:translateY(0) rotate(-1.1deg)}50%{transform:translateY(-6px) rotate(1.1deg) scale(1.01)}}
+.v-actions{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;margin:36px 0 0}
+.v-back,.v-shop{font:800 1rem/1 "Nunito",system-ui,sans-serif;text-decoration:none;padding:14px 20px;border-radius:14px}
+.v-back{color:#f1eadc;border:2px solid rgba(241,234,220,.5)}.v-shop{background:#cbe03a;color:#18240a}
+.v-back:hover{background:rgba(241,234,220,.1)}
+.back-fixed{position:fixed;right:14px;bottom:14px;z-index:60;font:800 .95rem/1 "Nunito",system-ui,sans-serif;text-decoration:none;color:#f1eadc;background:rgba(13,31,43,.88);border:1px solid rgba(241,234,220,.35);padding:10px 14px;border-radius:12px;backdrop-filter:blur(6px)}
+.back-fixed:hover{background:#13293a}
+.visit a:focus-visible,.back-fixed:focus-visible{outline:3px solid #cbe03a;outline-offset:3px}
+@media (max-width:760px){.scenes{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.sway{animation:none}}
+/* Gäste agieren zusammen: sie neigen sich im Wechsel zueinander (fließend, kein Hüpfen) */
+.tiles{background:linear-gradient(180deg,rgba(13,31,43,.35),rgba(13,31,43,.7)),url("../img/neu/city_platz.webp") center/cover,#13293a}
+.tiles.n2 figure:nth-child(1) .sway{animation-name:greet-l;animation-duration:7s;animation-delay:0s}
+.tiles.n2 figure:nth-child(2) .sway{animation-name:greet-r;animation-duration:7s;animation-delay:0s}
+.tiles.n4 figure:nth-child(odd) .sway{animation-name:greet-l}.tiles.n4 figure:nth-child(even) .sway{animation-name:greet-r}
+@keyframes greet-l{0%,100%{transform:translateX(0) rotate(0)}30%{transform:translateX(5px) rotate(2.4deg) scale(1.012)}60%{transform:translateX(2px) rotate(.8deg)}}
+@keyframes greet-r{0%,100%{transform:translateX(0) rotate(0)}30%{transform:translateX(-5px) rotate(-2.4deg) scale(1.012)}60%{transform:translateX(-2px) rotate(-.8deg)}}
+
+/* v6b: keine Karten. Gäste stehen frei auf dem Platz, weich ausgeblendeter Platz-Hintergrund, fließende Bewegung */
+.square{position:relative;display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1.45fr 1.05fr;align-items:end;gap:clamp(4px,1.6vw,22px);padding:clamp(48px,7vw,84px) 0 clamp(10px,2vw,24px);isolation:isolate}
+.square::before{content:"";position:absolute;inset:0;z-index:-1;background:url("../img/neu/city_platz.webp") center bottom/cover no-repeat;opacity:.5;-webkit-mask-image:radial-gradient(closest-side ellipse at 50% 50%,#000 25%,transparent 100%);mask-image:radial-gradient(closest-side ellipse at 50% 50%,#000 25%,transparent 100%);pointer-events:none}
+.guest{margin:0;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:0}
+.guest .float{display:block;width:100%;animation:float 6s ease-in-out infinite;animation-delay:calc(var(--d) * -1)}
+.guest img{display:block;width:100%;height:auto;max-height:46vh;object-fit:contain;filter:drop-shadow(0 14px 12px rgba(0,0,0,.5)) drop-shadow(0 0 22px color-mix(in srgb,var(--fig) 35%,transparent))}
+.guest .lean{transform-origin:50% 92%;animation-duration:7s;animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-delay:calc(var(--d) * -1)}
+.guest.dot:nth-child(odd) .lean{animation-name:greet-l}.guest.dot:nth-child(even) .lean{animation-name:greet-r}
+.guest.grok .lean{animation-name:greet-r}
+.guest.muse .lean{animation-name:wave;animation-duration:3.6s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes wave{0%,100%{transform:rotate(-2deg)}25%{transform:rotate(3.5deg)}50%{transform:rotate(-1deg)}75%{transform:rotate(4deg)}}
+.say{position:relative;z-index:2;margin-bottom:8px;padding:6px 11px;border-radius:12px;background:#fffaf0;color:#1c2a33;font:800 .82rem/1.15 "Nunito",system-ui,sans-serif;text-align:center;box-shadow:0 4px 10px -4px rgba(0,0,0,.5);border:2px solid var(--fig);opacity:0;animation:say 14s ease-in-out infinite;animation-delay:calc(var(--d) * 1.6s + .4s)}
+.say::after{content:"";position:absolute;left:50%;bottom:-7px;width:11px;height:11px;translate:-50% 0;rotate:45deg;background:#fffaf0;border:2px solid var(--fig);border-top:0;border-left:0}
+@keyframes say{0%,6%{opacity:0;transform:translateY(6px)}12%,34%{opacity:1;transform:none}40%,100%{opacity:0;transform:translateY(-3px)}}
+.captions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,4vw,48px);margin-top:12px}
+.captions h3{font:800 1.25rem/1.2 "Nunito",system-ui,sans-serif;margin:0 0 4px}.captions p{margin:0;color:#b8c6c6}
+@media (max-width:760px){
+ .square{grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 8px;padding-top:56px}
+ .guest img{max-height:30vh}
+ .guest.grok{grid-column:span 1}
+ .say{font-size:.72rem;padding:5px 8px}
+ .captions{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.guest .float,.guest .lean{animation:none!important}.say{animation:none;opacity:1}}
